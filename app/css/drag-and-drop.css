@@ -1,40 +1,37 @@
 * {
-  font-family: helbetica, arial; 
+  font-family: helbetica, arial;
 }
-@boxHeight: 100px;
 [draggable] {
   text-shadow: 0px 1px 1px #eee;
   width: 100px;
   display: inline-block;
   box-shadow: 0 1px 2px #EAEBE8;
   margin: 10px;
-  height: @boxHeight;
+  height: 100px;
   border-radius: 8px;
   text-align: center;
-  line-height: @boxHeight;//for verticle align text 
-  span{
-    verticle-align: middle; //save
-    display: inline-block;
-    line-height: normal;
-  }
-  
+  line-height: 100px;
 }
-
+[draggable] span {
+  verticle-align: middle;
+  display: inline-block;
+  line-height: normal;
+}
 [draggable]:nth-of-type(1) {
-    background: linear-gradient(to top, #F7C95E, #F7D483);
+  background: linear-gradient(to top, #f7c95e, #f7d483);
 }
 [draggable]:nth-of-type(2) {
-    background: linear-gradient(to top, #F2A5EC, #D1A5F2);
+  background: linear-gradient(to top, #f2a5ec, #d1a5f2);
 }
 [draggable]:nth-of-type(3) {
-    background: linear-gradient(to top, #C1F2A5, #CAF7B0);
+  background: linear-gradient(to top, #c1f2a5, #caf7b0);
 }
 [draggable]:nth-of-type(4) {
-    background: linear-gradient(to top, #84F8FA, #BFFEFF);
+  background: linear-gradient(to top, #84f8fa, #bffeff);
 }
 [draggable]:nth-of-type(5) {
-    background: linear-gradient(to top, #FFB5B5, #FFC7C7);
+  background: linear-gradient(to top, #ffb5b5, #ffc7c7);
 }
 [draggable]:nth-of-type(6) {
-    background: linear-gradient(to top, #FAFF94, #FCFFBA);
+  background: linear-gradient(to top, #faff94, #fcffba);
 }
