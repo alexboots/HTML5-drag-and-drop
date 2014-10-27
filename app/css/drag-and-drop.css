@@ -1,7 +1,7 @@
 * {
   font-family: helbetica, arial;
 }
-[draggable] {
+.draggable-droppable {
   text-shadow: 0px 1px 1px #eee;
   width: 100px;
   display: inline-block;
@@ -12,26 +12,26 @@
   text-align: center;
   line-height: 100px;
 }
-[draggable] span {
+.draggable-droppable span {
   verticle-align: middle;
   display: inline-block;
   line-height: normal;
 }
-[draggable]:nth-of-type(1) {
+.draggable-droppable:nth-of-type(1) {
   background: linear-gradient(to top, #f7c95e, #f7d483);
 }
-[draggable]:nth-of-type(2) {
+.draggable-droppable:nth-of-type(2) {
   background: linear-gradient(to top, #f2a5ec, #d1a5f2);
 }
-[draggable]:nth-of-type(3) {
+.draggable-droppable:nth-of-type(3) {
   background: linear-gradient(to top, #c1f2a5, #caf7b0);
 }
-[draggable]:nth-of-type(4) {
+.draggable-droppable:nth-of-type(4) {
   background: linear-gradient(to top, #84f8fa, #bffeff);
 }
-[draggable]:nth-of-type(5) {
+.draggable-droppable:nth-of-type(5) {
   background: linear-gradient(to top, #ffb5b5, #ffc7c7);
 }
-[draggable]:nth-of-type(6) {
+.draggable-droppable:nth-of-type(6) {
   background: linear-gradient(to top, #faff94, #fcffba);
 }

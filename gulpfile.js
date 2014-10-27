@@ -8,6 +8,7 @@ var http = require('http')
     , ecstatic = require('ecstatic')
     , hostname = '127.0.0.1'
     , jsUrl = './app/js/*.js'
+    , lessUrl = './app/css/*.less'
     , port = 8080;
 
 var path = {
@@ -23,7 +24,6 @@ gulp.task('serve', function() {
 
 
 gulp.task('less', function() {
-  var lessUrl = './app/css/*.less';
   gulp.src(lessUrl)
     .pipe(watch(lessUrl))
     .pipe(less())
