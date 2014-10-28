@@ -22,7 +22,7 @@
                 trident = userAgent.indexOf('Trident/'); //Detect IE 11
 
             if (msie > 0 || trident > 0) {
-                setDataString = 'Text';
+                dataString = 'Text';
                 return true;
             } else {
                 return false;
@@ -47,7 +47,7 @@
           elementDragged = this;
 
           e.dataTransfer.effectAllowed = 'move';
-          e.dataTransfer.setData('text/html', this.innerHTML);
+          e.dataTransfer.setData(dataString, this.innerHTML);
           //e.dataTransfer.setDragImage(dragImg, 20, 50); //idk about a drag image 
         };
 
@@ -68,9 +68,9 @@
 
         dragonDrop.handleDrop = function(e) {
          if(elementDragged !== this) {
-            var data = e.dataTransfer.getData('text/html');
+            var data = e.dataTransfer.getData(dataString);
             elementDragged.innerHTML = this.innerHTML;
-            this.innerHTML = e.dataTransfer.getData('text/html');
+            this.innerHTML = e.dataTransfer.getData(dataString);
           }
           this.style.border = "2px solid transparent";
           e.stopPropagation();
