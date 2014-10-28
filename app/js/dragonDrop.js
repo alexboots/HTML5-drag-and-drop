@@ -38,7 +38,7 @@
 
         dragonDrop.handleDragEnter = function(e) {
           if(elementDragged !== this) {
-            this.firstElementChild.style.border = "2px dashed #3a3a3a";
+            this.style.border = "2px dashed #3a3a3a";
           }
         };
 
@@ -48,7 +48,7 @@
         };
 
         dragonDrop.handleDragLeave = function(e) {
-          this.firstElementChild.style.border = "none";
+          this.style.border = "2px solid transparent";
         };
 
         dragonDrop.handleDrop = function(e) {
@@ -57,13 +57,13 @@
             elementDragged.innerHTML = this.innerHTML;
             this.innerHTML = e.dataTransfer.getData('text/html');
           }
-          this.firstElementChild.style.border = "none";
+          this.style.border = "2px solid transparent";
           e.stopPropagation();
           return false;
         };
 
         dragonDrop.handleDragEnd = function(e) {
-          this.firstElementChild.style.border = "none";
+          this.style.border = "2px solid transparent";
         };
 
         // Actiavte Drag and Dropping on whatever element

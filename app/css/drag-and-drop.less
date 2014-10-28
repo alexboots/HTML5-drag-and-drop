@@ -6,29 +6,38 @@ body {
   box-sizing: inherit;
 }
 @border-radius: 8px;
-@boxHeight: 100px;
+@boxSize: 100px;
 .draggable-droppable {
   cursor: pointer;
-  width: 100px;
+  width: @boxSize;
   display: inline-block;  
   margin: 10px;
-  height: @boxHeight;
+  height: @boxSize;
   border-radius: @border-radius;
+  padding: 2px;
+  border: 2px solid transparent;
   
-  line-height: @boxHeight;//for verticle align text 
+  line-height: @boxSize;//for verticle align text 
   span{
-    verticle-align: middle; //save
+    verticle-align: middle;
     display: inline-block;
     line-height: normal;
   }
-  
+
+  >[class^="box-"] {
+    //This stops the child elements from interfering with dragover / leave
+    pointer-events: none; 
+  }
 }
-[class^="box-"] {
-  border: 2px solid transparent;
+[class^="box-"] {  
+  height: inherit;
   text-align: center;
   border-radius: @border-radius;
   text-shadow: 0px 1px 1px #eee;
   box-shadow: 0 1px 2px #EAEBE8;
+
+  height: @boxSize - 8;
+  width: @boxSize - 8;
 }
 .box-1 {
     background: linear-gradient(to top, #F7C95E, #F7D483);
