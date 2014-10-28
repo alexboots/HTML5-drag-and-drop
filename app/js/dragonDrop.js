@@ -10,12 +10,12 @@
 
     var elemYoureDragging = null
         , dataString        = 'text/html' //needs to be changed for IE LOL - also not sure if should change for text/plain etc 
-        , startingPosition  = 0        
+        , startingPosition  = 0    
+        , elementDragged = null
+        , elementDroppedOn = null    
         , draggableElementArray = Array.prototype.slice.call(draggableElements) //Turn NodeList into array
         , dragonDrop = {}; //Put all our methods in a lovely object 
         
-
-
         dragonDrop.bindDragAndDropAbilities = function(elem) {
           elem.setAttribute('draggable', 'true');
           elem.addEventListener('dragstart', dragonDrop.handleDragStartMove, false);
@@ -28,17 +28,15 @@
           elem.addEventListener('drop', dragonDrop.handleDrop, false);
         };
 
-
-
         dragonDrop.handleDragStartMove = function(e) {
           var dragImg = document.createElement("img");
           dragImg.src = "img/poodle.jpg";
           
-          e.dataTransfer.effectAllowed = 'copy';
-          e.dataTransfer.setData(dataString, this.outerHTML);
-          //e.dataTransfer.setDragImage(dragImg, 20, 50);
+          elementDragged = this;
 
-          //console.log(e);
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/html', this.innerHTML);
+          //e.dataTransfer.setDragImage(dragImg, 20, 50);
         };
 
         dragonDrop.handleDragEnter = function(e) {
@@ -51,7 +49,7 @@
           console.log('drag Over');
           console.log('E', e);     
           e.preventDefault();
-          e.dataTransfer.dropEffect = 'copy';     
+          e.dataTransfer.dropEffect = 'move';     
         };
 
         dragonDrop.handleDragLeave = function(e) {
@@ -60,22 +58,39 @@
         };
 
         dragonDrop.handleDrop = function(e) {
-          console.log('drop');
-          console.log('E', e);
+          var data = e.dataTransfer.getData('text/html');
 
-          var data = e.dataTransfer.getData(dataString);
-          e.target.innerHTML = data;
-          console.log('DATA', data);
+          console.log('________');
+          console.log('________');
+          console.log('__drop__');
+          console.log('e', e);
+          console.log('Path', e.path);
+          console.log('Path[0]', e.path[0]);
+          console.log('Path[0].classname', e.path[0].className);
+          console.log('DataTranfer', e.dataTransfer);
+          console.log('Data', data);
+          console.log('srcelement', e.target);
+          console.log('srcelement', e.srcElement);
+          console.log('srcelement', e.srcElement.lastChild);
+          console.log('innerHTML', e.target.innerHTML);
+          console.log('array', draggableElementArray);
 
-          e.preventDefault();
-          console.log('DROP', e);
+          elementDragged.innerHTML = this.innerHTML;
+          this.innerHTML = e.dataTransfer.getData('text/html');
+
+          //e.target
+
+          e.stopPropagation();
+          return false;
         };
 
         dragonDrop.handleDragEnd = function(e) {
-          console.log('drag end');
-          console.log('E', e);   
-
-
+          console.log('________');
+          console.log('________');
+          console.log('__drag end__');
+          console.log('E', e);
+          console.log('array', draggableElementArray);
+          
         };
 
         // Actiavte Drag and Dropping on whatever element
