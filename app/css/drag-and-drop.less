@@ -1,17 +1,20 @@
-* {
+body {
   font-family: helbetica, arial; 
+  box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+@border-radius: 8px;
 @boxHeight: 100px;
 .draggable-droppable {
   cursor: pointer;
-  text-shadow: 0px 1px 1px #eee;
   width: 100px;
-  display: inline-block;
-  box-shadow: 0 1px 2px #EAEBE8;
+  display: inline-block;  
   margin: 10px;
   height: @boxHeight;
-  border-radius: 8px;
-  text-align: center;
+  border-radius: @border-radius;
+  
   line-height: @boxHeight;//for verticle align text 
   span{
     verticle-align: middle; //save
@@ -20,16 +23,13 @@
   }
   
 }
-
-.drop-area {
-  height: 200px;
-  width: 300px;
-  margin: 0 auto;
-  border: 1px solid #3a3a3a;
-  border-radius: 3px;
-  margin-top: 80px;
+[class^="box-"] {
+  border: 2px solid transparent;
+  text-align: center;
+  border-radius: @border-radius;
+  text-shadow: 0px 1px 1px #eee;
+  box-shadow: 0 1px 2px #EAEBE8;
 }
-
 .box-1 {
     background: linear-gradient(to top, #F7C95E, #F7D483);
 }
