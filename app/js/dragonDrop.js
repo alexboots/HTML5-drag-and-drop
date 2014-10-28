@@ -14,6 +14,21 @@
         , elementDroppedOn = null    
         , draggableElementArray = Array.prototype.slice.call(draggableElements) //Turn NodeList into array
         , dragonDrop = {}; //Put all our methods in a lovely object 
+
+        // Change the dataString type since IE doesn't support setData and getData correctly. 
+        dragonDrop.changeDataStringForIe = (function () {
+            var userAgent = window.navigator.userAgent,
+                msie = userAgent.indexOf('MSIE '),       //Detect IE
+                trident = userAgent.indexOf('Trident/'); //Detect IE 11
+
+            if (msie > 0 || trident > 0) {
+                setDataString = 'Text';
+                return true;
+            } else {
+                return false;
+            }
+        })();
+
         
         dragonDrop.bindDragAndDropAbilities = function(elem) {
           elem.setAttribute('draggable', 'true');
