@@ -3,6 +3,7 @@
 }
 @boxHeight: 100px;
 .draggable-droppable {
+  cursor: pointer;
   text-shadow: 0px 1px 1px #eee;
   width: 100px;
   display: inline-block;
@@ -20,21 +21,30 @@
   
 }
 
-.draggable-droppable:nth-of-type(1) {
+.drop-area {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #3a3a3a;
+  border-radius: 3px;
+  margin-top: 80px;
+}
+
+.box-1 {
     background: linear-gradient(to top, #F7C95E, #F7D483);
 }
-.draggable-droppable:nth-of-type(2) {
+.box-2 {
     background: linear-gradient(to top, #F2A5EC, #D1A5F2);
 }
-.draggable-droppable:nth-of-type(3) {
+.box-3 {
     background: linear-gradient(to top, #C1F2A5, #CAF7B0);
 }
-.draggable-droppable:nth-of-type(4) {
+.box-4 {
     background: linear-gradient(to top, #84F8FA, #BFFEFF);
 }
-.draggable-droppable:nth-of-type(5) {
+.box-5 {
     background: linear-gradient(to top, #FFB5B5, #FFC7C7);
 }
-.draggable-droppable:nth-of-type(6) {
+.box-6 {
     background: linear-gradient(to top, #FAFF94, #FCFFBA);
 }

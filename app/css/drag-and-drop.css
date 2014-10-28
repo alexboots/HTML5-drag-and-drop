@@ -2,6 +2,7 @@
   font-family: helbetica, arial;
 }
 .draggable-droppable {
+  cursor: pointer;
   text-shadow: 0px 1px 1px #eee;
   width: 100px;
   display: inline-block;
@@ -17,21 +18,29 @@
   display: inline-block;
   line-height: normal;
 }
-.draggable-droppable:nth-of-type(1) {
+.drop-area {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #3a3a3a;
+  border-radius: 3px;
+  margin-top: 80px;
+}
+.box-1 {
   background: linear-gradient(to top, #f7c95e, #f7d483);
 }
-.draggable-droppable:nth-of-type(2) {
+.box-2 {
   background: linear-gradient(to top, #f2a5ec, #d1a5f2);
 }
-.draggable-droppable:nth-of-type(3) {
+.box-3 {
   background: linear-gradient(to top, #c1f2a5, #caf7b0);
 }
-.draggable-droppable:nth-of-type(4) {
+.box-4 {
   background: linear-gradient(to top, #84f8fa, #bffeff);
 }
-.draggable-droppable:nth-of-type(5) {
+.box-5 {
   background: linear-gradient(to top, #ffb5b5, #ffc7c7);
 }
-.draggable-droppable:nth-of-type(6) {
+.box-6 {
   background: linear-gradient(to top, #faff94, #fcffba);
 }
