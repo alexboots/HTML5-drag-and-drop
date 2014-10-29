@@ -8,10 +8,8 @@
   var dragAndDropModule = function(draggableElements){
 
     var elemYoureDragging = null
-        , dataString        = 'text/html' //needs to be changed for IE LOL - also not sure if should change for text/plain etc 
-        , startingPosition  = 0    
+        , dataString        = 'text/html'    
         , elementDragged = null
-        , elementDroppedOn = null    
         , draggableElementArray = Array.prototype.slice.call(draggableElements) //Turn NodeList into array
         , dragonDrop = {}; //Put all our methods in a lovely object 
 
