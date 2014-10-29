@@ -26,6 +26,9 @@ body {
 .draggable-droppable > [class^="box-"] {
   pointer-events: none;
 }
+.draggable-droppable:hover {
+  box-shadow: 0 0 3px #cfd1d1;
+}
 [class^="box-"] {
   height: inherit;
   text-align: center;
