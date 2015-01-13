@@ -7,4 +7,4 @@ Not super robust but a good launching off point.
 
 Includes dataType fix for IE that coudl maybe be improved upon.
 
-Demo: http://www.alexhays.com/html5-drag-drop-re-order/
+Example: http://codepen.io/alexboots/pen/fKhLy
